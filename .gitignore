@@ -1,0 +1,39 @@
+# Carpeta bin y obj
+bin/
+obj/
+
+# Archivos de configuración local
+appsettings.Development.json
+*.sln.DotSettings
+
+# Archivos generados por Visual Studio
+.vs/
+*.user
+*.vscode
+
+# Archivos de dependencias y paquetes
+**/packages/
+
+# Archivos de registro, caché y temporales
+*.log
+*.cache
+*.tmp
+
+# Archivos de compilación y resultados de compilación
+*.dll
+*.exe
+*.pdb
+*.dll.config
+*.exe.config
+
+# Archivos de publicación
+publish/
+
+# Archivos generados por herramientas de construcción
+[Tt]est[Rr]esult*/
+*.dotCover
+*.trx
+*.vsmdi
+*.coverage
+*.runsettings
+*.LoadTest*
