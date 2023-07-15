@@ -1,6 +1,7 @@
 ﻿using AnimalsApp.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace AnimalsApp.Controllers
@@ -21,15 +22,22 @@ namespace AnimalsApp.Controllers
             return View();
         }
 
-        public async Task<IActionResult> AnimalsPage()
+        public async Task<IActionResult> AnimalsPage(int page = 1)
         {
             HttpResponseMessage response = await _httpClient.GetAsync(_BaseUrl);
+            List < Animal > animalsShowed = new List< Animal >();
 
-            if(response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)
             {
+                int pageSize = 10; 
                 string responseData = await response.Content.ReadAsStringAsync();
-                List<Animal> animals = JsonConvert.DeserializeObject<List<Animal>>(responseData);
-                return View(animals);
+                List<Animal> animals = JsonConvert.DeserializeObject<List<Animal>>(responseData) ?? new List<Animal>();
+                int totalPages = calculateNumberOfPages(animals.Count());
+                animalsShowed = animals.Skip((page - 1) * 10).Take(pageSize).ToList();
+
+                ViewBag.Page = page;
+                ViewBag.TotalPages = totalPages;
+                return View(animalsShowed);
             }
             else
             {
@@ -37,6 +45,11 @@ namespace AnimalsApp.Controllers
             return RedirectToAction("Error");
             }
 
+        }
+
+        private int calculateNumberOfPages(int registers = 0)
+        {
+            return (int)Math.Ceiling((double)registers / 10);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

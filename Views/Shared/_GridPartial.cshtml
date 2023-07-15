@@ -1,0 +1,90 @@
+﻿
+<div class="container mt-4">
+    <h3>Current Animals</h3>
+    <hr />
+    <table class="table table-bordered border-primary text-center">
+        <thead class="table-primary">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Breed</th>
+                <th>BirthDate</th>
+                <th>Sex</th>
+                <th>Price</th>
+                <th>State</th>
+                <th>Select</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- rows -->
+            @foreach (var animal in Model)
+            {
+                <tr>
+                    <td>@animal.AnimalId</td>
+                    <td>@animal.Name</td>
+                    <td>@animal.Breed</td>
+                    <td>@animal.BirthDate.ToString("yyyy-MM-dd")</td>
+                    <td>@animal.Sex</td>
+                    <td>$@animal.Price</td>
+                    <td>
+                        @if (@animal.IsActive)
+                        {
+                            <span class="badge bg-success">Active</span>
+                        }
+                        else
+                        {
+                            <span class="badge bg-danger">Inactive</span>
+                        }
+                    </td>
+                    <td class="text-center">
+                        <div class="d-flex justify-content-center form-check">
+                            <input class="form-check-input"
+                            type="checkbox" value="" id="@animal.AnimalId">
+                        </div>
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td></td>
+                <td><input class="form-control editable-" data-propiedad="Name" placeholder="Name" /></td>
+                <td><input class="form-control editable-nuevo" data-propiedad="Breed" placeholder="Breed" /></td>
+                <td><input class="form-control editable-nuevo" data-propiedad="BirthDate" placeholder="BirthDate" /></td>
+                <td><input class="form-control editable-nuevo" data-propiedad="Sex" placeholder="Sex" /></td>
+                <td><input class="form-control editable-nuevo" data-propiedad="Price" placeholder="Price" /></td>
+                <td><input class="form-control editable-nuevo" data-propiedad="IsActive" placeholder="IsActive" /></td>
+                <td><input class="form-control editable-nuevo" data-propiedad="Selected" placeholder="Selected" /></td>
+            </tr>
+        </tbody>
+    </table>
+    <nav aria-label="Pagination">
+        <ul class="pagination">
+            @if (ViewBag.Page - 1 >0)
+            {
+            <li class="page-item">
+                <a class="page-link" href="@Url.Action("AnimalsPage",new {page =  ViewBag.Page - 1})" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                    </a>
+            </li>
+                
+            }
+            @for (int i = 1; i <= ViewBag.TotalPages; i++)
+            {
+                <li class="page-item @(i == ViewBag.Page ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("AnimalsPage",new {page =  i})">@i</a>
+                </li>
+            }
+          
+            @if (ViewBag.Page != ViewBag.TotalPages)
+            {
+            <li class="page-item">
+                <a class="page-link" href="@Url.Action("AnimalsPage",new {page =  ViewBag.Page + 1})" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                    </a>
+            </li>    
+            }
+        </ul>
+    </nav>
+
+</div>
