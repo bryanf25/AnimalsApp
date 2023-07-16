@@ -1,184 +1,185 @@
 {
     "animals": [
-        {
-      "AnimalId": 1,
-      "Name": "Max",
-      "Breed": "Labrador Retriever",
-      "BirthDate": "2019-05-10",
-      "Sex": "Male",
-      "Price": 500,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 2,
-      "Name": "Luna",
-      "Breed": "Golden Retriever",
-      "BirthDate": "2020-02-15",
-      "Sex": "Female",
-      "Price": 600,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 3,
-      "Name": "Buddy",
-      "Breed": "German Shepherd",
-      "BirthDate": "2018-08-20",
-      "Sex": "Male",
-      "Price": 550,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 4,
-      "Name": "Molly",
-      "Breed": "Poodle",
-      "BirthDate": "2017-12-05",
-      "Sex": "Female",
-      "Price": 450,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 5,
-      "Name": "Rocky",
-      "Breed": "Bulldog",
-      "BirthDate": "2016-06-25",
-      "Sex": "Male",
-      "Price": 400,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 6,
-      "Name": "Daisy",
-      "Breed": "Beagle",
-      "BirthDate": "2019-09-18",
-      "Sex": "Female",
-      "Price": 550,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 7,
-      "Name": "Charlie",
-      "Breed": "Siberian Husky",
-      "BirthDate": "2018-04-12",
-      "Sex": "Male",
-      "Price": 650,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 8,
-      "Name": "Lucy",
-      "Breed": "Shih Tzu",
-      "BirthDate": "2021-01-30",
-      "Sex": "Female",
-      "Price": 500,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 9,
-      "Name": "Buster",
-      "Breed": "Boxer",
-      "BirthDate": "2017-07-08",
-      "Sex": "Male",
-      "Price": 550,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 10,
-      "Name": "Lola",
-      "Breed": "French Bulldog",
-      "BirthDate": "2020-11-22",
-      "Sex": "Female",
-      "Price": 700,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 11,
-      "Name": "Teddy",
-      "Breed": "Cavalier King Charles Spaniel",
-      "BirthDate": "2018-10-16",
-      "Sex": "Male",
-      "Price": 600,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 12,
-      "Name": "Mia",
-      "Breed": "Dalmatian",
-      "BirthDate": "2017-03-07",
-      "Sex": "Female",
-      "Price": 550,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 13,
-      "Name": "Oscar",
-      "Breed": "Rottweiler",
-      "BirthDate": "2019-08-14",
-      "Sex": "Male",
-      "Price": 550,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 14,
-      "Name": "Coco",
-      "Breed": "Yorkshire Terrier",
-      "BirthDate": "2018-01-23",
-      "Sex": "Female",
-      "Price": 450,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 15,
-      "Name": "Jack",
-      "Breed": "Australian Shepherd",
-      "BirthDate": "2020-04-02",
-      "Sex": "Male",
-      "Price": 600,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 16,
-      "Name": "Molly",
-      "Breed": "Border Collie",
-      "BirthDate": "2017-09-10",
-      "Sex": "Female",
-      "Price": 550,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 17,
-      "Name": "Rocky",
-      "Breed": "Great Dane",
-      "BirthDate": "2016-05-27",
-      "Sex": "Male",
-      "Price": 650,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 18,
-      "Name": "Rosie",
-      "Breed": "Basset Hound",
-      "BirthDate": "2021-02-12",
-      "Sex": "Female",
-      "Price": 500,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 19,
-      "Name": "Zeus",
-      "Breed": "Doberman Pinscher",
-      "BirthDate": "2017-06-05",
-      "Sex": "Male",
-      "Price": 600,
-      "IsActive": true
-    },
-    {
-      "AnimalId": 20,
-      "Name": "Luna",
-      "Breed": "Saint Bernard",
-      "BirthDate": "2020-10-28",
-      "Sex": "Female",
-      "Price": 700,
-      "IsActive": true
-    }
+      {
+        "AnimalId": 1,
+        "Name": "Max",
+        "Breed": "Labrador Retriever",
+        "BirthDate": "2019-05-10",
+        "Sex": "Male",
+        "Price": 500,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 2,
+        "Name": "Luna",
+        "Breed": "Golden Retriever",
+        "BirthDate": "2020-02-15",
+        "Sex": "Female",
+        "Price": 600,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 3,
+        "Name": "Buddy",
+        "Breed": "German Shepherd",
+        "BirthDate": "2018-08-20",
+        "Sex": "Male",
+        "Price": 550,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 4,
+        "Name": "Molly",
+        "Breed": "Poodle",
+        "BirthDate": "2017-12-05",
+        "Sex": "Female",
+        "Price": 450,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 5,
+        "Name": "Rocky",
+        "Breed": "Bulldog",
+        "BirthDate": "2016-06-25",
+        "Sex": "Male",
+        "Price": 400,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 6,
+        "Name": "Daisy",
+        "Breed": "Beagle",
+        "BirthDate": "2019-09-18",
+        "Sex": "Female",
+        "Price": 550,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 7,
+        "Name": "Charlie",
+        "Breed": "Siberian Husky",
+        "BirthDate": "2018-04-12",
+        "Sex": "Male",
+        "Price": 650,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 8,
+        "Name": "Lucy",
+        "Breed": "Shih Tzu",
+        "BirthDate": "2021-01-30",
+        "Sex": "Female",
+        "Price": 500,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 9,
+        "Name": "Buster",
+        "Breed": "Boxer",
+        "BirthDate": "2017-07-08",
+        "Sex": "Male",
+        "Price": 550,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 10,
+        "Name": "Lola",
+        "Breed": "French Bulldog",
+        "BirthDate": "2020-11-22",
+        "Sex": "Female",
+        "Price": 700,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 11,
+        "Name": "Teddy",
+        "Breed": "Cavalier King Charles Spaniel",
+        "BirthDate": "2018-10-16",
+        "Sex": "Male",
+        "Price": 600,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 12,
+        "Name": "Mia",
+        "Breed": "Dalmatian",
+        "BirthDate": "2017-03-07",
+        "Sex": "Female",
+        "Price": 550,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 13,
+        "Name": "Oscar",
+        "Breed": "Rottweiler",
+        "BirthDate": "2019-08-14",
+        "Sex": "Male",
+        "Price": 550,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 14,
+        "Name": "Coco",
+        "Breed": "Yorkshire Terrier",
+        "BirthDate": "2018-01-23",
+        "Sex": "Female",
+        "Price": 450,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 15,
+        "Name": "Jack",
+        "Breed": "Australian Shepherd",
+        "BirthDate": "2020-04-02",
+        "Sex": "Male",
+        "Price": 600,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 16,
+        "Name": "Molly",
+        "Breed": "Border Collie",
+        "BirthDate": "2017-09-10",
+        "Sex": "Female",
+        "Price": 550,
+        "IsActive": false
+      },
+      {
+        "AnimalId": 17,
+        "Name": "Rocky",
+        "Breed": "Great Dane",
+        "BirthDate": "2016-05-27",
+        "Sex": "Male",
+        "Price": 650,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 18,
+        "Name": "Rosie",
+        "Breed": "Basset Hound",
+        "BirthDate": "2021-02-12",
+        "Sex": "Female",
+        "Price": 500,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 19,
+        "Name": "Zeus",
+        "Breed": "Doberman Pinscher",
+        "BirthDate": "2017-06-05",
+        "Sex": "Male",
+        "Price": 600,
+        "IsActive": true
+      },
+      {
+        "AnimalId": 20,
+        "Name": "Luna",
+        "Breed": "Saint Bernard",
+        "BirthDate": "2020-10-28",
+        "Sex": "Female",
+        "Price": 700,
+        "IsActive": true
+      }
     ]
-}
+  }
+  

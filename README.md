@@ -1,7 +1,7 @@
 # ENGLISH VERSION
 
 ## Description
-This project is created for evaluation purposes as a technical test by Engineer Bryan Camilo Flechas.
+This project is created by Engineer Bryan Camilo Flechas for evaluation purposes as a technical test
 
 ## Requirements
 .NET Core 6 or higher
@@ -18,8 +18,8 @@ This project is created for evaluation purposes as a technical test by Engineer 
 # VERSION ESPAÑOL 
 
 ## Descripción
-This project is created wi
-Este proyecto es creado con el fin de ser evaluado como prueba tecnica por el ingeniero Bryan Camilo Flechas
+
+Este proyecto es creado por el ingeniero Bryan Camilo Flechas con el fin de ser evaluado como prueba tecnica 
 
 ## Requisitos
  .NET CORE 6 o superior

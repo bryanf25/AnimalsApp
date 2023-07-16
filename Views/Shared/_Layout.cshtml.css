@@ -23,7 +23,7 @@ a {
   border-color: #1861ac;
 }
 
-.nav-link:hover {
+.menu:hover {
     background-color: cornflowerblue;
 }
 
@@ -50,3 +50,4 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+

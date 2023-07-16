@@ -23,7 +23,7 @@
                     <td>@animal.AnimalId</td>
                     <td>@animal.Name</td>
                     <td>@animal.Breed</td>
-                    <td>@animal.BirthDate.ToString("yyyy-MM-dd")</td>
+                    <td>@animal.BirthDate</td>
                     <td>@animal.Sex</td>
                     <td>$@animal.Price</td>
                     <td>
@@ -56,6 +56,7 @@
             </tr>
         </tbody>
     </table>
+    <div class="d-flex justify-content-between">
     <nav aria-label="Pagination">
         <ul class="pagination">
             @if (ViewBag.Page - 1 >0)
@@ -86,5 +87,9 @@
             }
         </ul>
     </nav>
+    <div>
+            @ViewBag.Showed of @ViewBag.Rows Rows
+    </div>
+    </div>
 
 </div>

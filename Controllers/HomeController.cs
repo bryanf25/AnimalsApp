@@ -1,8 +1,11 @@
 ﻿using AnimalsApp.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Text;
 
 namespace AnimalsApp.Controllers
 {
@@ -17,34 +20,79 @@ namespace AnimalsApp.Controllers
             _logger = logger;
         }
 
-        public  IActionResult DefaultPage()
+        public IActionResult DefaultPage()
         {
             return View();
         }
 
-        public async Task<IActionResult> AnimalsPage(int page = 1)
+        [HttpPost]
+        public async Task<IActionResult> filterTable(IFormCollection form)
         {
-            HttpResponseMessage response = await _httpClient.GetAsync(_BaseUrl);
-            List < Animal > animalsShowed = new List< Animal >();
 
+            var parameters = form.Where(item => !string.IsNullOrEmpty(item.Value))
+                .Select(item => new KeyValuePair<string, string>(item.Key, 
+                (item.Key == "IsActive" && item.Value.Contains("on")) ? "true" : item.Value))
+                .ToList();
+
+            return RedirectToAction("AnimalsPage",  new { page = 1, parameters = formatParams(parameters) });
+        }
+
+        private async Task<List<Animal>> getAnimalsService(string parms)
+        {
+            string urlRequest = (parms == null) ? _BaseUrl : $"{_BaseUrl}/?{parms}";
+            HttpResponseMessage response = await _httpClient.GetAsync(urlRequest);
+
+            List<Animal> animalsToShow = new List<Animal>();
             if (response.IsSuccessStatusCode)
             {
-                int pageSize = 10; 
-                string responseData = await response.Content.ReadAsStringAsync();
-                List<Animal> animals = JsonConvert.DeserializeObject<List<Animal>>(responseData) ?? new List<Animal>();
-                int totalPages = calculateNumberOfPages(animals.Count());
-                animalsShowed = animals.Skip((page - 1) * 10).Take(pageSize).ToList();
+            string responseData = await response.Content.ReadAsStringAsync();
+            animalsToShow = JsonConvert.DeserializeObject<List<Animal>>(responseData) ?? new List<Animal>();
+            return animalsToShow;
 
-                ViewBag.Page = page;
-                ViewBag.TotalPages = totalPages;
-                return View(animalsShowed);
             }
             else
             {
-
-            return RedirectToAction("Error");
+                RedirectToAction("Error");
             }
+            return animalsToShow;
 
+        }
+
+        private string formatParams(List<KeyValuePair<string, string>> parms )
+        {
+            StringBuilder queryString = new StringBuilder();
+            foreach (var param in parms)
+            {
+                queryString.Append(param.Key);
+                queryString.Append("=");
+                queryString.Append(param.Value);
+                queryString.Append("&");
+            }
+            if (queryString.Length > 0)
+            {
+                queryString.Length--;
+            }
+            return queryString.ToString();
+        }
+
+
+        public async Task<IActionResult> AnimalsPage(int page = 1,string parameters = null)
+        {
+            List<Animal> animals = await getAnimalsService(parameters);
+
+           
+
+                int pageSize = 10; 
+                int totalPages = calculateNumberOfPages(animals.Count());
+                List<Animal> animalsShowed = animals.Skip((page - 1) * pageSize).Take(pageSize).ToList();
+
+                ViewBag.Page = page;
+                ViewBag.TotalPages = totalPages;
+            ViewBag.Rows = animals.Count();
+            ViewBag.Showed = animalsShowed.Count();
+            ViewBag.SexOptions = new SelectList(Enum.GetValues(typeof(Sex)));
+                return View(animalsShowed);
+    
         }
 
         private int calculateNumberOfPages(int registers = 0)

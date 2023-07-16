@@ -6,42 +6,45 @@
 
             <hr />
             <div class="mb-3">
-                <form class="row g-3">
-                    <div class="col-3">
+                <form class="row g-3" method="post" action="/Home/filterTable">
+                    <div class="col-2">
                         <label>Animal id</label>
-                        <input class="form-control md-2" type="text" placeholder="Identification" aria-label="Search">
+                        <input name="Identification" class="form-control md-2" type="text" placeholder="Identification" aria-label="Search">
                     </div>
                     <div class="col-3">
                         <label>Name</label>
-                        <input class="form-control md-2" type="text" placeholder="Name" aria-label="Name">
+                        <input name="Name" class="form-control md-2" type="text" placeholder="Name" aria-label="Name">
                     </div>
                     <div class="col-3">
                         <label>Breed</label>
-                        <input class="form-control md-2" type="text" placeholder="Breed" aria-label="Breed">
+                        <input name="Breed" class="form-control md-2" type="text" placeholder="Breed" aria-label="Breed">
                     </div>
-                    <div class="col-3">
+                    <div class="col-2">
                         <label>BirthDate</label>
-                        <input class="form-control md-2" type="text" placeholder="BirthDate" aria-label="BirthDate">
+                        <input name="BirthDate" class="form-control md-2" type="date" id="BirthDate" pattern="\d{2}/\d{2}/\d{4}" />
+                    </div>
+                    <div class="col-2 text-center d-flex align-items-center justify-content-center">
+                        <div class="form-check form-switch">
+                            <input name="IsActive" class="form-check-input" type="hidden" value="false">
+                            <input name="IsActive" class="form-check-input" type="checkbox" id="flexSwitchState" checked>
+                            <label class="form-check-label " for="flexSwitchState">state</label>
+                        </div>
                     </div>
                     <div class="col-3">
                         <label>Sex</label>
-                        <select class="form-select" aria-label="Sex">
-                            <option selected>Select one option</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
+                        <select name="Sex" class="form-select" aria-label="Sex">
+                            <option selected disabled>Select one option</option>
+                            @foreach (var item in ViewBag.SexOptions)
+                            {
+                                <option value="@item.Text">@item.Text</option>
+                            }
                         </select>
                     </div>
                     <div class="col-2">
                         <label>Price</label>
-                        <input class="form-control md-2" type="text" placeholder="Price" aria-label="Price">
+                        <span>$</span><input name="Price" class="form-control md-2" min="0" type="number" placeholder="Price" aria-label="Price">
                     </div>
-                    <div class="col-2">
-
-                        <label>state</label>
-                        <input class="form-control md-2" type="text" placeholder="state" aria-label="state">
-                    </div>
-                    <div class="col-12 ">
+                    <div class="col-12 text-end">
                         <button class="col-2 btn btn-outline-primary " type="submit">
                             <i data-feather="filter"></i>
                             Filter
@@ -52,3 +55,10 @@
         </fieldset>
     </div>
 </div>
+<style>
+    .form-check-label {
+        order: -1;
+        margin-right: 10px;
+    }
+</style>
+

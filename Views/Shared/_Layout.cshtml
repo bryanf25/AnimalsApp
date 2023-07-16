@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/AnimalsApp.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://unpkg.com/feather-icons/dist/feather.min.css">
-
+    
 </head>
 <body>
     <header>
@@ -23,11 +22,11 @@
 
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
+                        <li class="menu nav-item">
                             <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="DefaultPage">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="AnimalsPage">Management animals</a>
+                        <li class="menu nav-item">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="AnimalsPage">Management Animals</a>
                         </li>
                     </ul>
                 </div>
@@ -44,13 +43,15 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - AnimalsApp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2023 - AnimalsApp - <a href="https://github.com/bryanf25">Powerd By Bryan Flechas</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
     <script>
         feather.replace();
     </script>
