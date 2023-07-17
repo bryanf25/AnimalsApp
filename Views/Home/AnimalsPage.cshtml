@@ -7,11 +7,11 @@
 </header>
 
 
-<div id="_FiltersPartial">
+<div class="animate__animated animate__slideInLeft" id="_FiltersPartial">
     <partial name="_FiltersPartial" />
 </div>
 
-<div id="_GridPartial">
+<div class="animate__animated animate__zoomIn" id="_GridPartial">
     <partial name="_GridPartial" />
 </div>
 
@@ -22,5 +22,108 @@
 
 @section Scripts {
     <script>
+        $(document).ready(function () {
+
+            $('.editable').click(function () {
+                $(this).attr('contenteditable', 'true').focus();
+            });
+
+            $('.editable').blur(function(){
+                const id = $(this).data('id')
+                const property = $(this).data('property')
+                const value =(property == "Sex") ? $(this).find('option:selected').val() : $(this).text()
+                updateData(id, property, value)
+            })
+
+            $('.delete-register').click(function () {
+                const id = $(this).attr('id')
+                deleteData(id);
+            });
+
+            $('.save-register').click(function () {
+               
+                const Name = $('.new-editable[data-property="Name"]').val();
+                const Breed= $('.new-editable[data-property="Breed"]').val();
+                const BirthDate = $('.new-editable[data-property="BirthDate"]').val();
+                const Sex = $('.new-editable[data-property="Sex"]').val();
+                const Price = $('.new-editable[data-property="Price"]').val();
+                const IsActive = $('.new-editable[data-property="IsActive"]').val();
+                const values = [Name, Breed, BirthDate]
+                if (values.every(value =>value !=="")) {
+                const id = Math.floor(Math.random() * (10000 - 21 + 1)) + 21;
+                const obj = {
+                    id: id,
+                    Name : Name ,
+                    Breed: Breed ,
+                    BirthDate : BirthDate, 
+                    Sex : Sex ,
+                    Price : Price=="" ? 0 :parseInt(Price) ,
+                        IsActive: Boolean(IsActive)
+                }
+                saveData(obj)
+                }
+                else{
+                    alert("Action not allowed Please fill in all the fields to be able to save")
+                }
+            })
+
+
+
+
+
+            function updateData(id, property, value) {
+                
+                const data ={
+                    id: id,
+                    [property]: value
+                }
+                $.ajax({
+                    url: '@Url.Action("updateAnimal","Home")',
+                    type: "PATCH",
+                    data: JSON.stringify(data),
+                    contentType: 'application/json',
+                    success: function(response){
+                        alert(response)
+
+                    },
+                    error: function (error) {
+                        
+                    }
+                })
+            }
+
+            function saveData(obj) {
+                $.ajax({
+                    url: '@Url.Action("saveAnimal","Home")',
+                    type: "POST",
+                    data: JSON.stringify(obj),
+                    contentType: 'application/json',
+                    success: function (response) {
+                        alert(response)
+                        window.location.href = '@Url.Action("AnimalsPage", "Home")?lastPage=true';
+
+                    },
+                    error: function (error) {
+
+                    }
+                })
+            }
+            function deleteData(id) {
+                $.ajax({
+                    url: '@Url.Action("deleteAnimal","Home")'+'/'+id,
+                    type: "DELETE",
+                    success: function (response) {
+                        alert(response)
+
+                        const page = $('.page-item.active a').text();
+                        window.location.href = '@Url.Action("AnimalsPage", "Home")?page='+page;
+
+                    },
+                    error: function (error) {
+
+                    }
+                })
+            }
+        });
     </script>
 }

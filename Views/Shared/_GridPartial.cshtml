@@ -5,6 +5,7 @@
     <table class="table table-bordered border-primary text-center">
         <thead class="table-primary">
             <tr>
+                @*header*@
                 <th>ID</th>
                 <th>Name</th>
                 <th>Breed</th>
@@ -13,6 +14,7 @@
                 <th>Price</th>
                 <th>State</th>
                 <th>Select</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -20,12 +22,17 @@
             @foreach (var animal in Model)
             {
                 <tr>
-                    <td>@animal.AnimalId</td>
-                    <td>@animal.Name</td>
-                    <td>@animal.Breed</td>
-                    <td>@animal.BirthDate</td>
-                    <td>@animal.Sex</td>
-                    <td>$@animal.Price</td>
+                    <td><span >@animal.id</span></td>
+                    <td><span class="editable" data-id="@animal.id" data-property="Name">@animal.Name</span></td>
+                    <td><span class="editable" data-id="@animal.id" data-property="Breed">@animal.Breed</span></td>
+                    <td><span class="editable" data-id="@animal.id" data-property="BirthDate">@animal.BirthDate</span></td>
+                    <td>
+                        <select class="editable" data-id="@animal.id" data-property="Sex">
+                            <option value="Male" selected="@(animal.Sex.ToString() == "Male" ? "selected" : null)">Male</option>
+                            <option value="Female" selected="@(animal.Sex.ToString() == "Female" ? "selected" : null)">Female</option>
+                        </select>
+                    </td>
+                    <td>$<span class="editable" data-id="@animal.id" data-property="Price">@animal.Price</span></td>
                     <td>
                         @if (@animal.IsActive)
                         {
@@ -39,20 +46,47 @@
                     <td class="text-center">
                         <div class="d-flex justify-content-center form-check">
                             <input class="form-check-input"
-                            type="checkbox" value="" id="@animal.AnimalId">
+                            type="checkbox" value="" id="@animal.id">
                         </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-outline-danger delete-register" id="@animal.id">
+                            <i data-feather="trash-2"></i>
+                            Delete
+                        </button>
                     </td>
                 </tr>
             }
             <tr>
                 <td></td>
-                <td><input class="form-control editable-" data-propiedad="Name" placeholder="Name" /></td>
-                <td><input class="form-control editable-nuevo" data-propiedad="Breed" placeholder="Breed" /></td>
-                <td><input class="form-control editable-nuevo" data-propiedad="BirthDate" placeholder="BirthDate" /></td>
-                <td><input class="form-control editable-nuevo" data-propiedad="Sex" placeholder="Sex" /></td>
-                <td><input class="form-control editable-nuevo" data-propiedad="Price" placeholder="Price" /></td>
-                <td><input class="form-control editable-nuevo" data-propiedad="IsActive" placeholder="IsActive" /></td>
-                <td><input class="form-control editable-nuevo" data-propiedad="Selected" placeholder="Selected" /></td>
+                <td><input class="form-control new-editable"  data-property="Name" placeholder="Name" /></td>
+                <td><input class="form-control new-editable"  data-property="Breed" placeholder="Breed" /></td>
+                <td><input class="form-control new-editable" type="date" data-property="BirthDate" pattern="\d{2}/\d{2}/\d{4}" />
+                    </td>
+                <td>
+                    <select class="new-editable" data-property="Sex">
+                        <option value="Male" selected>Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </td>
+                <td>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">$</span>
+                        </div>
+                        <input class="form-control new-editable" data-property="Price" placeholder="Price" min="0" type="number" />
+                    </div>
+                </td>
+                <td>
+                    <select class="form-control new-editable" data-property="IsActive">
+                        <option value=true selected>Active</option>
+                        <option value=false>Inactive</option>
+                    </select>
+                </td>
+                <td>No available</td>
+                <td><button class="btn btn-outline-success save-register">
+                        <i data-feather="check"></i>
+                    Save</button>
             </tr>
         </tbody>
     </table>
@@ -91,5 +125,7 @@
             @ViewBag.Showed of @ViewBag.Rows Rows
     </div>
     </div>
-
+   @* <div class="container text-end">
+        <button class="col-2 btn btn-outline-primary save-new">Guardar Tabla</button>
+    </div>*@
 </div>

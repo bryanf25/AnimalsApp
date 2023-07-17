@@ -16,3 +16,20 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+
+.slider_img-box {
+    display: flex;
+    justify-content: center;
+}
+
+    .slider_img-box img {
+        max-width: 100%;
+        height: auto;
+    }
+
+.font-default{
+    height:500px !important
+}
+
