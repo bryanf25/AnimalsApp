@@ -2,17 +2,17 @@
   "animals": [
     {
       "id": 1,
-      "Name": "Max",
-      "Breed": "Labrador Retriver",
+      "Name": "Maxiiiii",
+      "Breed": "Poodle",
       "BirthDate": "2019-05-10",
-      "Sex": "Male",
-      "Price": 400,
+      "Sex": "Female",
+      "Price": 4000,
       "IsActive": true
     },
     {
       "id": 2,
       "Name": "Luna",
-      "Breed": "Golden Retriever",
+      "Breed": "Poodle",
       "BirthDate": "2020-02-15",
       "Sex": "Female",
       "Price": 600,
@@ -21,7 +21,7 @@
     {
       "id": 3,
       "Name": "Buddy",
-      "Breed": "German Shepherd",
+      "Breed": "Poodle",
       "BirthDate": "2018-08-20",
       "Sex": "Male",
       "Price": 550,
@@ -75,7 +75,7 @@
     {
       "id": 9,
       "Name": "Buster",
-      "Breed": "Boxer",
+      "Breed": "Poodle",
       "BirthDate": "2017-07-08",
       "Sex": "Male",
       "Price": 550,
@@ -93,7 +93,7 @@
     {
       "id": 11,
       "Name": "Teddy",
-      "Breed": "Cavalier King Charles Spaniel",
+      "Breed": "Poodle",
       "BirthDate": "2018-10-16",
       "Sex": "Male",
       "Price": 600,
@@ -120,7 +120,7 @@
     {
       "id": 14,
       "Name": "Coco",
-      "Breed": "Yorkshire Terrier",
+      "Breed": "Poodle",
       "BirthDate": "2018-01-23",
       "Sex": "Female",
       "Price": 450,
@@ -174,10 +174,64 @@
     {
       "id": 20,
       "Name": "Luna",
-      "Breed": "Saint Bernard",
+      "Breed": "Beagle",
       "BirthDate": "2020-10-28",
       "Sex": "Female",
       "Price": 700,
+      "IsActive": true
+    },
+    {
+      "id": 21,
+      "Name": "Max",
+      "Breed": "Labrador Retriever",
+      "BirthDate": "2019-05-10",
+      "Sex": "Male",
+      "Price": 400,
+      "IsActive": true
+    },
+    {
+      "id": 22,
+      "Name": "Luna",
+      "Breed": "Golden Retriever",
+      "BirthDate": "2020-02-15",
+      "Sex": "Female",
+      "Price": 600,
+      "IsActive": true
+    },
+    {
+      "id": 23,
+      "Name": "Buddy",
+      "Breed": "Bulldog",
+      "BirthDate": "2018-08-20",
+      "Sex": "Male",
+      "Price": 550,
+      "IsActive": true
+    },
+    {
+      "id": 24,
+      "Name": "Molly",
+      "Breed": "Golden Retriever",
+      "BirthDate": "2017-12-05",
+      "Sex": "Female",
+      "Price": 450,
+      "IsActive": true
+    },
+    {
+      "id": 25,
+      "Name": "Rocky",
+      "Breed": "Bulldog",
+      "BirthDate": "2016-06-25",
+      "Sex": "Male",
+      "Price": 400,
+      "IsActive": true
+    },
+    {
+      "id": 5191,
+      "Name": "bryan",
+      "Breed": "chau chau",
+      "BirthDate": "2023-07-10",
+      "Sex": "Male",
+      "Price": 200,
       "IsActive": true
     }
   ]

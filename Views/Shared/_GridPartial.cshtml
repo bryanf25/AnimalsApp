@@ -46,7 +46,8 @@
                     <td class="text-center">
                         <div class="d-flex justify-content-center form-check">
                             <input class="form-check-input"
-                            type="checkbox" value="" id="@animal.id">
+                                   type="checkbox" value="@animal.id" data-name="@animal.Name"
+                                   data-breed="@animal.Breed" data-price="@animal.Price" name="cartSelected">
                         </div>
                     </td>
                     <td>
@@ -125,7 +126,9 @@
             @ViewBag.Showed of @ViewBag.Rows Rows
     </div>
     </div>
-   @* <div class="container text-end">
-        <button class="col-2 btn btn-outline-primary save-new">Guardar Tabla</button>
-    </div>*@
+    <div class="container text-end">
+        <button class="col-3 btn btn-outline-info add-cart">
+            <i data-feather="shopping-cart"></i>
+            Add selected animals to shopcart</button>
+    </div>
 </div>

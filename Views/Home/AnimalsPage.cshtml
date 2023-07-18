@@ -1,6 +1,8 @@
 ﻿@{
     ViewData["Title"] = "Management Animals";
+    var partialModel = ViewData["AnimalsSelected"];
 }
+
 <header>
     <h1 class="text-center mt-3 ">@ViewData["Title"]</h1>
 
@@ -16,7 +18,9 @@
 </div>
 
 <div id="_TablePartial">
-    <partial name="_TablePartial" />
+
+    @Html.Partial("_TablePartial", partialModel)
+   
 </div>
 
 
@@ -67,9 +71,37 @@
                 }
             })
 
+            $(".add-cart").click(function () {
+                let selectedAnimals = [];
+                $('input[name="cartSelected"]:checked').each(function () {
+                    let name = $(this).data('name');
+                    let breed = $(this).data('breed');
+                    let price = $(this).data('price');
+                    let animalSelected ={
+                        Name: name,
+                        Breed: breed,
+                        Price: price
+                    }
+                    selectedAnimals.push(animalSelected)
+            })
+                loadTable(selectedAnimals)
+            });
 
+            function loadTable(selectedAnimals) {
+                $.ajax({
+                    url: '@Url.Action("loadAnimalSelectedTable","Home")',
+                    type: "POST",
+                    data: JSON.stringify(selectedAnimals),
+                    contentType: 'application/json',
+                    success: function (response) {
+                            $("#_TablePartial").html(response)
 
+                    },
+                    error: function (error) {
 
+                    }
+                })
+            }
 
             function updateData(id, property, value) {
                 
